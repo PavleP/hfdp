@@ -1,12 +1,12 @@
-package strategy;
+package strategy.duck;
+
+import strategy.flybehavior.FlyWithWings;
+import strategy.quackbehavior.Quack;
 
 public class MallardDuck extends Duck {
 
 	public MallardDuck() {
-
-		quackBehavior = new Quack();
-		flyBehavior = new FlyWithWings();
-
+		super(new FlyWithWings(), new Quack());
 	}
 
 	public void display() {
