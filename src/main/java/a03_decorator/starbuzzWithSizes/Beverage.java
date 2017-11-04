@@ -1,21 +1,18 @@
 package a03_decorator.starbuzzWithSizes;
 
 public abstract class Beverage {
-	public enum Size { TALL, GRANDE, VENTI };
-	Size size = Size.TALL;
-	String description = "Unknown Beverage";
-  
-	public String getDescription() {
-		return description;
-	}
-	
-	public void setSize(Size size) {
-		this.size = size;
-	}
-	
+
+	private Size size = Size.TALL;
+
 	public Size getSize() {
 		return this.size;
 	}
- 
-	public abstract double cost();
+
+	public void setSize(Size size) {
+		this.size = size;
+	}
+
+  public abstract String getDescription();
+
+  public abstract double getCost();
 }
