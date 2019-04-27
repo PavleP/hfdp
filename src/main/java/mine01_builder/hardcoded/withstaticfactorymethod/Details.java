@@ -1,12 +1,16 @@
-package mine01_builder.hardcoded.withconstructor;
+package mine01_builder.hardcoded.withstaticfactorymethod;
 
-public class Datails {
+public class Details {
 
   private int var1; // required
   private int var2; // required
   private int var3; // optional
   private int var4; // optional
   private int var5; // optional
+
+  public static Builder builder(int var1, int var2) {
+    return new Builder(var1, var2);
+  }
 
   public static class Builder {
 
@@ -17,7 +21,7 @@ public class Datails {
     private int var4 = 0;
     private int var5 = 0;
 
-    public Builder(int var1, int var2) {
+    private Builder(int var1, int var2) {
       this.var1 = var1;
       this.var2 = var2;
     }
@@ -37,12 +41,12 @@ public class Datails {
       return this;
     }
 
-    public Datails build() {
-      return new Datails(this);
+    public Details build() {
+      return new Details(this);
     }
   }
 
-  private Datails(Builder builder) {
+  private Details(Builder builder) {
     this.var1 = builder.var1;
     this.var2 = builder.var2;
     this.var3 = builder.var3;
